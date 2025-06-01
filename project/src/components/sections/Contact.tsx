@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div className={`${isInView ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
-            <div className="bg-secondary-50 rounded-2xl p-8 shadow-soft">
+            <div className="bg-[#153569] rounded-2xl p-8 shadow-soft">
               <h3 className="text-2xl font-display font-semibold text-primary-800 mb-6">
                 Envie uma Mensagem
               </h3>
@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
                 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center bg-primary-500 hover:bg-primary-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-soft w-full md:w-auto"
+                  className="inline-flex items-center justify-center bg-primary-800 hover:bg-primary-400 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-soft w-full md:w-auto"
                 >
                   <span>Enviar Mensagem</span>
                   <Send size={18} className="ml-2" />
@@ -93,33 +93,33 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-display font-semibold mb-6">
                 Informações de Contato
               </h3>
-              <p className="mb-8 text-secondary-300">
+              <p className="mb-8 text-white">
                 Ficaremos felizes em conversar sobre seu projeto e como podemos ajudar a alcançar seus objetivos.
               </p>
               
               <div className="space-y-6">
                 <div>
                   <h4 className="text-lg font-medium mb-2">Endereço</h4>
-                  <p className="text-secondary-300">Av. Paulista, 1000 - São Paulo, SP</p>
+                  <p className="text-white">Av. Paulista, 1000 - São Paulo, SP</p>
                 </div>
                 
                 <div>
                   <h4 className="text-lg font-medium mb-2">Email</h4>
-                  <a href="mailto:contato@exemplo.com" className="text-secondary-300 hover:text-white transition-colors">
+                  <a href="mailto:contato@exemplo.com" className="text-white hover:text-white transition-colors">
                     contato@exemplo.com
                   </a>
                 </div>
                 
                 <div>
                   <h4 className="text-lg font-medium mb-2">Telefone</h4>
-                  <a href="tel:+551199999999" className="text-secondary-300 hover:text-white transition-colors">
+                  <a href="tel:+551199999999" className="text-white hover:text-white transition-colors">
                     (11) 99999-9999
                   </a>
                 </div>
                 
                 <div>
                   <h4 className="text-lg font-medium mb-2">Horário de Atendimento</h4>
-                  <p className="text-secondary-300">
+                  <p className="text-white">
                     Segunda a Sexta: 9h às 18h<br />
                     Sábado: 9h às 13h
                   </p>

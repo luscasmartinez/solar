@@ -63,7 +63,7 @@ const Services: React.FC = () => {
     <section 
       id="services" 
       ref={sectionRef}
-      className="py-20 bg-secondary-50"
+      className="py-20 bg-primary-50"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">

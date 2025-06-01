@@ -31,7 +31,7 @@ const projects = [
 
 function Projects() {
   return (
-    <section className="py-20 bg-secondary-50">
+    <section className="py-20 bg-primary-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-display font-bold text-primary-800 mb-4 animate-fade-in">

@@ -13,26 +13,26 @@ const Processo: React.FC = () => {
   const steps = [
     {
       icon: <ClipboardCheck size={24} />,
-      title: "Análise Inicial",
-      description: "Avaliação do local e consumo energético para dimensionamento ideal do sistema.",
+      title: "Projeto Fotovoltaico",
+      description: "Nessa etapa, realizamos o planejamento personalizado do seu sistema, considerando o seu consumo e a estrutura do local. Tudo é cuidadosamente projetado para oferecer máxima eficiência e economia.",
       color: "bg-blue-500"
     },
     {
       icon: <Settings size={24} />,
-      title: "Projeto Personalizado",
-      description: "Desenvolvimento do projeto técnico atendendo às suas necessidades específicas.",
+      title: "Instalação do Sistema",
+      description: "Com equipamentos de alta qualidade e uma equipe especializada, instalamos o sistema no seu imóvel. Garantimos segurança, eficiência e um acabamento impecável para que você aproveite o melhor da energia solar.",
       color: "bg-purple-500"
     },
     {
       icon: <Sun size={24} />,
-      title: "Instalação",
-      description: "Nossa equipe especializada realiza a instalação com segurança e eficiência.",
+      title: "Homologação",
+      description: "Após a instalação, cuidamos de todo o processo de homologação junto à concessionária de energia. Essa etapa assegura que o sistema esteja regularizado e pronto para gerar energia com total segurança.",
       color: "bg-yellow-500"
     },
     {
       icon: <CheckCircle size={24} />,
-      title: "Ativação",
-      description: "Liberação do sistema e treinamento para monitoramento do desempenho.",
+      title: "Suporte Pós-Venda",
+      description: "Nosso compromisso continua após a entrega. Oferecemos suporte técnico completo para monitoramento, manutenção e possíveis ajustes no sistema. Estamos aqui para garantir que sua experiência com energia solar seja impecável.",
       color: "bg-green-500"
     }
   ];
@@ -109,7 +109,7 @@ const Processo: React.FC = () => {
     <section 
       id="processo" 
       ref={sectionRef}
-      className="py-12 md:py-20 bg-white"
+      className="py-12 md:py-20 bg-[#153569]"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 

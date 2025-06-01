@@ -36,15 +36,20 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <Link to="/" className="text-2xl font-display font-bold text-primary-500">
-            Brand
+          <Link to="/" className="flex items-center">
+            {/* Substituição do texto Brand pela imagem */}
+            <img 
+              src="https://i.postimg.cc/hhfP09M8/eee5fceb.png" 
+              alt="Logo Solar Energy" 
+              className={`h-10 transition-all duration-300 ${isScrolled ? 'h-8' : 'h-10'}`}
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {isHomePage ? (
               <>
-                <a href="#hero\" className="font-medium text-primary-700 hover:text-primary-500 transition-colors">
+                <a href="#hero" className="font-medium text-primary-700 hover:text-primary-500 transition-colors">
                   Início
                 </a>
                 <a href="#about" className="font-medium text-primary-700 hover:text-primary-500 transition-colors">
