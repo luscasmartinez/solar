@@ -117,7 +117,7 @@ const About: React.FC = () => {
           <div className={`${isInView ? 'animate-slide-up delay-500' : 'opacity-0'}`}>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary-300/20 to-secondary-300/20 rounded-2xl blur-xl"></div>
-              <div className="relative bg-white p-2 rounded-2xl shadow-medium overflow-hidden">
+              <div className="relative rounded-2xl shadow-medium overflow-hidden">
                 <img 
                   src="https://images.pexels.com/photos/9875441/pexels-photo-9875441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="Instalação de painéis solares" 
