@@ -1,14 +1,41 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useInView } from '../../hooks/useInView';
 import { Sun, Battery, Leaf, Send } from 'lucide-react';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../config/firebase';
+import toast from 'react-hot-toast';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { threshold: 0.1 });
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Obrigado pelo interesse! Entraremos em contato em breve.');
+    setIsLoading(true);
+    
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+    
+    try {
+      await addDoc(collection(db, 'budgets'), {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        type: formData.get('type'),
+        source: 'hero_section',
+        createdAt: new Date(),
+        status: 'pending'
+      });
+      
+      toast.success('Orçamento solicitado com sucesso!');
+      form.reset();
+    } catch (error) {
+      toast.error('Erro ao enviar solicitação');
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -29,6 +56,7 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Seção Esquerda (Totalmente Preservada) */}
           <div className={`space-y-6 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
             <div className="flex gap-4 mb-6">
               <span className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/20 text-green-100 text-sm font-medium">
@@ -67,6 +95,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           
+          {/* Seção Direita (Formulário Ajustado) */}
           <div className={`${isInView ? 'animate-slide-up delay-300' : 'opacity-0 translate-y-10'}`}>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/20 to-green-500/20 rounded-2xl blur-xl"></div>
@@ -80,6 +109,7 @@ const Hero: React.FC = () => {
                   </h3>
                 </div>
                 
+                {/* Formulário com envio para Firebase */}
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -88,6 +118,7 @@ const Hero: React.FC = () => {
                     <input
                       type="text"
                       id="name"
+                      name="name"
                       required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-yellow-500 focus:ring focus:ring-yellow-200 focus:ring-opacity-50 transition-colors"
                       placeholder="Digite seu nome"
@@ -101,6 +132,7 @@ const Hero: React.FC = () => {
                     <input
                       type="email"
                       id="email"
+                      name="email"
                       required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-yellow-500 focus:ring focus:ring-yellow-200 focus:ring-opacity-50 transition-colors"
                       placeholder="seu@email.com"
@@ -114,6 +146,7 @@ const Hero: React.FC = () => {
                     <input
                       type="tel"
                       id="phone"
+                      name="phone"
                       required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-yellow-500 focus:ring focus:ring-yellow-200 focus:ring-opacity-50 transition-colors"
                       placeholder="(00) 00000-0000"
@@ -126,6 +159,7 @@ const Hero: React.FC = () => {
                     </label>
                     <select
                       id="type"
+                      name="type"
                       required
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-yellow-500 focus:ring focus:ring-yellow-200 focus:ring-opacity-50 transition-colors"
                     >
@@ -139,13 +173,23 @@ const Hero: React.FC = () => {
                   
                   <button
                     type="submit"
-                    className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center"
+                    disabled={isLoading}
+                    className={`w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center ${
+                      isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                    }`}
                   >
-                    <Send size={20} className="mr-2" />
-                    Solicitar Orçamento
+                    {isLoading ? (
+                      <span className="inline-block h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    ) : (
+                      <>
+                        <Send size={20} className="mr-2" />
+                        Solicitar Orçamento
+                      </>
+                    )}
                   </button>
                 </form>
                 
+                {/* Rodapé do Formulário (Mantido Igual) */}
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <div className="flex items-center gap-2 text-gray-600 text-sm">
                     <Battery size={16} />

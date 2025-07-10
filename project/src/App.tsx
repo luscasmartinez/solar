@@ -12,6 +12,7 @@ import Login from './pages/admin/Login';
 import Dashboard from './pages/admin/Dashboard';
 import ProjectList from './pages/admin/ProjectList';
 import ProjectForm from './pages/admin/ProjectForm';
+import Budgets from './pages/admin/BudgetList'; // Importe o novo componente
 
 function App() {
   return (
@@ -50,6 +51,14 @@ function App() {
             <ProtectedRoute>
               <AdminLayout>
                 <ProjectForm />
+              </AdminLayout>
+            </ProtectedRoute>
+          } />
+          {/* Nova rota para orçamentos */}
+          <Route path="/admin/budgets" element={
+            <ProtectedRoute>
+              <AdminLayout>
+                <Budgets />
               </AdminLayout>
             </ProtectedRoute>
           } />

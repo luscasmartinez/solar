@@ -7,7 +7,8 @@ import {
   Plus, 
   LogOut, 
   User,
-  Home
+  Home,
+  ClipboardList // Ícone para as solicitações
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
@@ -45,6 +46,12 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
       icon: <Plus size={20} />,
       label: 'Novo Projeto',
       path: '/admin/projects/new'
+    },
+    // Novo item para as solicitações de orçamento
+    {
+      icon: <ClipboardList size={20} />,
+      label: 'Solicitações',
+      path: '/admin/budgets'
     }
   ];
 
