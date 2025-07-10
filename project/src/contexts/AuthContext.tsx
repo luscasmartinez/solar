@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { User } from 'firebase/auth';
-import { authService } from '../services/authService';
+import { User, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../config/firebase'; // Importe diretamente do Firebase config
 
 interface AuthContextType {
   user: User | null;
@@ -13,22 +13,19 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (context === undefined) {
+  if (!context) {
     throw new Error('useAuth must be used within an AuthProvider');
   }
   return context;
 };
 
-interface AuthProviderProps {
-  children: React.ReactNode;
-}
-
-export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = authService.onAuthStateChange((user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      console.log('Auth state changed:', user); // Debug
       setUser(user);
       setLoading(false);
     });
@@ -37,17 +34,16 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   const login = async (email: string, password: string) => {
-    setLoading(true);
     try {
-      await authService.login(email, password);
-    } catch (error) {
+      setLoading(true);
+      await signInWithEmailAndPassword(auth, email, password);
+    } finally {
       setLoading(false);
-      throw error;
     }
   };
 
   const logout = async () => {
-    await authService.logout();
+    await auth.signOut();
   };
 
   const value = {
@@ -59,7 +55,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   return (
     <AuthContext.Provider value={value}>
-      {children}
+      {!loading && children}
     </AuthContext.Provider>
   );
 };

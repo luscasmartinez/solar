@@ -1,40 +1,33 @@
+import { auth } from '../config/firebase';
 import { 
   signInWithEmailAndPassword, 
   signOut, 
   onAuthStateChanged,
-  User
+  User 
 } from 'firebase/auth';
-import { auth } from '../config/firebase';
 
-export const authService = {
-  // Login
-  async login(email: string, password: string): Promise<User> {
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      return userCredential.user;
-    } catch (error) {
-      console.error('Erro no login:', error);
-      throw error;
-    }
-  },
-
-  // Logout
-  async logout(): Promise<void> {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.error('Erro no logout:', error);
-      throw error;
-    }
-  },
-
-  // Observar mudanças de autenticação
-  onAuthStateChange(callback: (user: User | null) => void) {
-    return onAuthStateChanged(auth, callback);
-  },
-
-  // Obter usuário atual
-  getCurrentUser(): User | null {
-    return auth.currentUser;
+export const login = async (email: string, password: string) => {
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    return userCredential.user;
+  } catch (error) {
+    console.error("Login error:", error);
+    throw error;
   }
+};
+
+export const logout = async () => {
+  try {
+    await signOut(auth);
+  } catch (error) {
+    console.error("Logout error:", error);
+    throw error;
+  }
+};
+
+export const onAuthStateChange = (callback: (user: User | null) => void) => {
+  return onAuthStateChanged(auth, (user) => {
+    console.log("Auth state changed:", user);
+    callback(user);
+  });
 };
