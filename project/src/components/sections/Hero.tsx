@@ -4,6 +4,7 @@ import { Sun, Battery, Leaf, Send } from 'lucide-react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../config/firebase';
 import toast from 'react-hot-toast';
+import Counter from '../Counter';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -80,19 +81,19 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="grid grid-cols-3 gap-6 pt-8">
-              <div className="text-center">
-                <div className="font-bold text-2xl text-yellow-400">98%</div>
-                <p className="text-sm text-gray-300">Economia na Conta</p>
-              </div>
-              <div className="text-center">
-                <div className="font-bold text-2xl text-yellow-400">500+</div>
-                <p className="text-sm text-gray-300">Projetos Realizados</p>
-              </div>
-              <div className="text-center">
-                <div className="font-bold text-2xl text-yellow-400">25 Anos</div>
-                <p className="text-sm text-gray-300">Garantia dos Painéis</p>
-              </div>
-            </div>
+    <div className="text-center">
+      <Counter value={100} />
+      <p className="text-sm text-gray-300">Projetos entregues</p>
+    </div>
+    <div className="text-center">
+      <Counter value={300} />
+      <p className="text-sm text-gray-300">Módulos instalados</p>
+    </div>
+    <div className="text-center">
+      <Counter value={500} suffix="Kwp" />
+      <p className="text-sm text-gray-300">Kwp de potencia total</p>
+    </div>
+  </div>
           </div>
           
           {/* Seção Direita (Formulário Ajustado) */}

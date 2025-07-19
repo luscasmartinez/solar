@@ -19,7 +19,7 @@ const About: React.FC = () => {
   const cards = [
     {
       icon: <Battery size={28} />,
-      title: "Economia Real",
+      title: "Missão",
       description: "Reduza sua conta de energia em até 95% e tenha retorno do investimento em aproximadamente 4 anos.",
       bgImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       day: "01",
@@ -29,7 +29,7 @@ const About: React.FC = () => {
     },
     {
       icon: <Leaf size={28} />,
-      title: "Sustentabilidade",
+      title: "Visão",
       description: "Energia limpa e renovável que contribui para a redução da emissão de gases do efeito estufa.",
       bgImage: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       day: "15",
@@ -39,7 +39,7 @@ const About: React.FC = () => {
     },
     {
       icon: <Award size={28} />,
-      title: "Qualidade Garantida",
+      title: "Valores",
       description: "Utilizamos equipamentos de primeira linha com garantia estendida e suporte técnico especializado.",
       bgImage: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       day: "30",

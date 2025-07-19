@@ -1,16 +1,10 @@
 import React, { useRef } from 'react';
 import { useInView } from '../../hooks/useInView';
-import { Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { threshold: 0.1 });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Form submission logic would go here
-    alert('Formulário enviado com sucesso! Em um ambiente real, esta mensagem seria enviada.');
-  };
 
   return (
     <section 
@@ -21,108 +15,86 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className={`text-3xl md:text-4xl font-display font-bold text-primary-800 mb-4 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
-            Entre em Contato
+            Onde nos Encontrar
           </h2>
           <p className={`text-lg text-primary-600 ${isInView ? 'animate-slide-up delay-100' : 'opacity-0'}`}>
-            Estamos prontos para ajudar você a transformar suas ideias em realidade.
+            Venha nos visitar ou entre em contato pelos nossos canais.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div className={`${isInView ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
-            <div className="bg-[#153569] rounded-2xl p-8 shadow-soft">
-              <h3 className="text-2xl font-display font-semibold text-primary-800 mb-6">
-                Envie uma Mensagem
-              </h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-primary-700 mb-1">
-                    Nome
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-secondary-300 focus:border-primary-500 focus:ring focus:ring-primary-200 focus:ring-opacity-50 transition-colors"
-                    placeholder="Seu nome completo"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-primary-700 mb-1">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-secondary-300 focus:border-primary-500 focus:ring focus:ring-primary-200 focus:ring-opacity-50 transition-colors"
-                    placeholder="seu.email@exemplo.com"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-primary-700 mb-1">
-                    Mensagem
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-secondary-300 focus:border-primary-500 focus:ring focus:ring-primary-200 focus:ring-opacity-50 transition-colors"
-                    placeholder="Como podemos ajudar você?"
-                  ></textarea>
-                </div>
-                
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center bg-primary-800 hover:bg-primary-400 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-soft w-full md:w-auto"
-                >
-                  <span>Enviar Mensagem</span>
-                  <Send size={18} className="ml-2" />
-                </button>
-              </form>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+          {/* Mapa do Google */}
+          <div className={`h-full min-h-[400px] ${isInView ? 'animate-fade-in delay-200' : 'opacity-0'}`}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.194341662915!2d-55.795084!3d-29.7819227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95aab959fea21ce5%3A0xe33884eeabc10204!2sGround%20Energia%20Solar%20%26%20Engenharia!5e0!3m2!1spt-BR!2sbr!4v1712345678901!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style={{ border: 0, borderRadius: '16px' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização da Ground Energia Solar & Engenharia"
+            ></iframe>
           </div>
           
+          {/* Informações de Contato */}
           <div className={`${isInView ? 'animate-slide-up delay-300' : 'opacity-0'}`}>
             <div className="bg-primary-800 text-white rounded-2xl p-8 shadow-soft h-full">
               <h3 className="text-2xl font-display font-semibold mb-6">
                 Informações de Contato
               </h3>
               <p className="mb-8 text-white">
-                Ficaremos felizes em conversar sobre seu projeto e como podemos ajudar a alcançar seus objetivos.
+                Estamos à disposição para tirar suas dúvidas sobre energia solar.
               </p>
               
               <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-medium mb-2">Endereço</h4>
-                  <p className="text-white">Av. Paulista, 1000 - São Paulo, SP</p>
+                <div className="flex items-start gap-4">
+                  <MapPin className="flex-shrink-0 mt-1 text-yellow-400" size={20} />
+                  <div>
+                    <h4 className="text-lg font-medium mb-1">Endereço</h4>
+                    <p className="text-white">
+                      R. Dom Pedro II, 1255 - Centro,<br />
+                      São Gabriel - RS, 97300-000
+                    </p>
+                  </div>
                 </div>
                 
-                <div>
-                  <h4 className="text-lg font-medium mb-2">Email</h4>
-                  <a href="mailto:contato@exemplo.com" className="text-white hover:text-white transition-colors">
-                    contato@exemplo.com
-                  </a>
+                <div className="flex items-start gap-4">
+                  <Mail className="flex-shrink-0 mt-1 text-yellow-400" size={20} />
+                  <div>
+                    <h4 className="text-lg font-medium mb-1">Email</h4>
+                    <a 
+                      href="mailto:contato@groundenergia.com" 
+                      className="text-white hover:text-yellow-300 transition-colors"
+                    >
+                      contato@groundenergia.com
+                    </a>
+                  </div>
                 </div>
                 
-                <div>
-                  <h4 className="text-lg font-medium mb-2">Telefone</h4>
-                  <a href="tel:+551199999999" className="text-white hover:text-white transition-colors">
-                    (11) 99999-9999
-                  </a>
+                <div className="flex items-start gap-4">
+                  <Phone className="flex-shrink-0 mt-1 text-yellow-400" size={20} />
+                  <div>
+                    <h4 className="text-lg font-medium mb-1">Telefone</h4>
+                    <a 
+                      href="tel:+555532323232" 
+                      className="text-white hover:text-yellow-300 transition-colors"
+                    >
+                      (55) 3232-3232
+                    </a>
+                    <p className="text-sm text-white/80 mt-1">WhatsApp disponível</p>
+                  </div>
                 </div>
                 
-                <div>
-                  <h4 className="text-lg font-medium mb-2">Horário de Atendimento</h4>
-                  <p className="text-white">
-                    Segunda a Sexta: 9h às 18h<br />
-                    Sábado: 9h às 13h
-                  </p>
+                <div className="flex items-start gap-4">
+                  <Clock className="flex-shrink-0 mt-1 text-yellow-400" size={20} />
+                  <div>
+                    <h4 className="text-lg font-medium mb-1">Horário de Atendimento</h4>
+                    <p className="text-white">
+                      Segunda a Sexta: 8h às 18h<br />
+                      Sábado: 8h às 12h
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
