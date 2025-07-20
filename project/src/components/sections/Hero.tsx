@@ -14,10 +14,10 @@ const Hero: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     const form = e.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
-    
+
     try {
       await addDoc(collection(db, 'budgets'), {
         name: formData.get('name'),
@@ -28,7 +28,7 @@ const Hero: React.FC = () => {
         createdAt: new Date(),
         status: 'pending'
       });
-      
+
       toast.success('Orçamento solicitado com sucesso!');
       form.reset();
     } catch (error) {
@@ -40,8 +40,8 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section 
-      id="hero" 
+    <section
+      id="hero"
       ref={sectionRef}
       className="relative min-h-screen pt-24 pb-16 flex items-center"
     >
@@ -69,33 +69,33 @@ const Hero: React.FC = () => {
                 Sustentável
               </span>
             </div>
-            
+
             <div className="relative">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 Transforme o Sol em Economia para seu Futuro
               </h1>
             </div>
-            
+
             <p className="text-xl text-gray-300 max-w-lg">
               Soluções em energia solar para residências e empresas. Reduza sua conta de luz e contribua para um planeta mais sustentável.
             </p>
 
             <div className="grid grid-cols-3 gap-6 pt-8">
-    <div className="text-center">
-      <Counter value={100} />
-      <p className="text-sm text-gray-300">Projetos entregues</p>
-    </div>
-    <div className="text-center">
-      <Counter value={300} />
-      <p className="text-sm text-gray-300">Módulos instalados</p>
-    </div>
-    <div className="text-center">
-      <Counter value={500} suffix="Kwp" />
-      <p className="text-sm text-gray-300">Kwp de potencia total</p>
-    </div>
-  </div>
+              <div className="text-center  font-bold text-2xl text-yellow-400">
+                <Counter value={100} />
+                <p className="text-sm text-gray-300">Projetos entregues</p>
+              </div>
+              <div className="text-center font-bold text-2xl text-yellow-400">
+                <Counter value={300} />
+                <p className="text-sm text-gray-300">Módulos instalados</p>
+              </div>
+              <div className="text-center font-bold text-2xl text-yellow-400">
+                <Counter value={500} suffix="" />
+                <p className="text-sm text-gray-300">Kwp de potencia total</p>
+              </div>
+            </div>
           </div>
-          
+
           {/* Seção Direita (Formulário Ajustado) */}
           <div className={`${isInView ? 'animate-slide-up delay-300' : 'opacity-0 translate-y-10'}`}>
             <div className="relative">
@@ -109,7 +109,7 @@ const Hero: React.FC = () => {
                     Solicite um Orçamento
                   </h3>
                 </div>
-                
+
                 {/* Formulário com envio para Firebase */}
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
@@ -171,13 +171,12 @@ const Hero: React.FC = () => {
                       <option value="rural">Rural</option>
                     </select>
                   </div>
-                  
+
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className={`w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center ${
-                      isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                    }`}
+                    className={`w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
+                      }`}
                   >
                     {isLoading ? (
                       <span className="inline-block h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
@@ -189,7 +188,7 @@ const Hero: React.FC = () => {
                     )}
                   </button>
                 </form>
-                
+
                 {/* Rodapé do Formulário (Mantido Igual) */}
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <div className="flex items-center gap-2 text-gray-600 text-sm">
