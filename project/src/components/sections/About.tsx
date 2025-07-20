@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useInView } from '../../hooks/useInView';
 import { Sun, Battery, Leaf, Award } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Counter from '../Counter';
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -128,24 +129,51 @@ const About: React.FC = () => {
           </div>
           
           <div className={`space-y-6 ${isInView ? 'animate-fade-in delay-600' : 'opacity-0'}`}>
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
-              Nossa Experiência
-            </h3>
-            <p className="text-blue-200">
-              Com mais de 10 anos no mercado de energia solar, já realizamos mais de 500 instalações em residências e empresas. Nossa equipe altamente qualificada está pronta para desenvolver o projeto ideal para suas necessidades.
-            </p>
-            <p className="text-blue-200">
-              Oferecemos soluções completas, desde o dimensionamento do sistema até a instalação e manutenção, sempre com foco na máxima eficiência e satisfação do cliente.
-            </p>
-            <div className="pt-2">
-              <a 
-                href="#contact" 
-                className="inline-block bg-white hover:bg-blue-100 text-blue-700 font-medium px-6 py-2 rounded-xl transition-all duration-300 shadow-soft"
-              >
-                Solicite uma Avaliação
-              </a>
-            </div>
-          </div>
+  <h3 className="text-2xl md:text-3xl font-bold text-white">
+    Nossa Experiência
+  </h3>
+  <p className="text-blue-200">
+    Com mais de 10 anos no mercado de energia solar, já realizamos mais de 500 instalações em residências e empresas. Nossa equipe altamente qualificada está pronta para desenvolver o projeto ideal para suas necessidades.
+  </p>
+  <p className="text-blue-200">
+    Oferecemos soluções completas, desde o dimensionamento do sistema até a instalação e manutenção, sempre com foco na máxima eficiência e satisfação do cliente.
+  </p>
+
+  {/* Cards de Estatísticas */}
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+    {/* Projetos Entregues */}
+    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
+      <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
+        <Counter value={300} duration={2000} />
+      </div>
+      <p className="text-sm text-blue-200">Projetos Entregues</p>
+    </div>
+
+    {/* Módulos Instalados */}
+    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
+      <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
+        <Counter value={6350} duration={2000} />
+      </div>
+      <p className="text-sm text-blue-200">Módulos Instalados</p>
+    </div>
+
+    {/* KWp de Potência */}
+    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
+      <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
+        <Counter value={3490} duration={2000} suffix=" " />
+      </div>
+      <p className="text-sm text-blue-200">KWp de Potência Total</p>
+    </div>
+
+    {/* Economia Gerada */}
+    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
+      <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
+        <Counter value={849} duration={2000} prefix="R$ " />
+      </div>
+      <p className="text-sm text-blue-200">Mil em Economia Gerada</p>
+    </div>
+  </div>
+</div>
         </div>
       </div>
 

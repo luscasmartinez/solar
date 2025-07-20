@@ -13,6 +13,7 @@ import Dashboard from './pages/admin/Dashboard';
 import ProjectList from './pages/admin/ProjectList';
 import ProjectForm from './pages/admin/ProjectForm';
 import Budgets from './pages/admin/BudgetList'; // Importe o novo componente
+import FaqSection from '../components/FaqSection';
 
 function App() {
   return (

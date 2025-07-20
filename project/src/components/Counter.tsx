@@ -1,4 +1,4 @@
-// Crie um novo arquivo src/components/Counter.tsx
+// src/components/Counter.tsx
 import React, { useState, useEffect, useRef } from 'react';
 
 interface CounterProps {
@@ -8,35 +8,42 @@ interface CounterProps {
   suffix?: string;
 }
 
-const Counter: React.FC<CounterProps> = ({ value, duration = 3000, prefix = '', suffix = '' }) => {
+const Counter: React.FC<CounterProps> = ({ value, duration = 2000, prefix = '', suffix = '' }) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
-  const observerRef = useRef<IntersectionObserver | null>(null);
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
-          startCounter();
-          observerRef.current?.disconnect();
-        }
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startCounter();
+          } else {
+            // Reset para permitir nova animação quando voltar à tela
+            hasAnimated.current = false;
+            setCount(0);
+          }
+        });
       },
       { threshold: 0.1 }
     );
 
     if (ref.current) {
       observer.observe(ref.current);
-      observerRef.current = observer;
     }
 
     return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
+      if (ref.current) {
+        observer.unobserve(ref.current);
       }
     };
-  }, []);
+  }, [value, duration]);
 
   const startCounter = () => {
+    if (hasAnimated.current) return;
+    hasAnimated.current = true;
+    
     const startTime = Date.now();
     const endTime = startTime + duration;
     
@@ -58,7 +65,7 @@ const Counter: React.FC<CounterProps> = ({ value, duration = 3000, prefix = '', 
   };
 
   return (
-    <div ref={ref} className="font-bold text-2xl text-yellow-400">
+    <div ref={ref}>
       {prefix}{count}{suffix}
     </div>
   );
