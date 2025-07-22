@@ -36,7 +36,7 @@ const Services: React.FC = () => {
 
   return (
     <section 
-      id="services" 
+      id="" 
       ref={sectionRef}
       className="py-20 bg-primary-800"
     >

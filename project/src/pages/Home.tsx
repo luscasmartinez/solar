@@ -6,13 +6,14 @@ import Contact from '../components/sections/Contact';
 import WhatsAppButton from '../components/WhatsAppButton';
 import Processo from '../components/sections/Processo';
 import FaqSection from '../components/FaqSection';
+import ServicesSection from '../components/ServicesSection';
 
 function Home() {
   return (
     <>
       <Hero />
       <About />
-      <Services />
+      <ServicesSection />
       <Processo />
       <Contact />
       <FaqSection />
