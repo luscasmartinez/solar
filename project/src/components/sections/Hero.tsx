@@ -191,10 +191,7 @@ const Hero: React.FC = () => {
 
                 {/* Rodapé do Formulário (Mantido Igual) */}
                 <div className="mt-6 pt-6 border-t border-gray-200">
-                  <div className="flex items-center gap-2 text-gray-600 text-sm">
-                    <Battery size={16} />
-                    <span>Economia média de 95% na conta de luz</span>
-                  </div>
+                  
                   <div className="flex items-center gap-2 text-gray-600 text-sm mt-2">
                     <Leaf size={16} />
                     <span>Energia 100% limpa e renovável</span>

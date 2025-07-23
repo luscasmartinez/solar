@@ -6,20 +6,20 @@ const AquecimentoSolar: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
 
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Header com imagem e título */}
-          <div className="relative bg-blue-600 py-12 px-8 text-white">
+          <div className="relative bg-orange-600 py-12 px-8 text-white">
             <div className="absolute top-0 left-0 w-full h-full opacity-10">
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500"></div>
             </div>
             <div className="relative z-10 flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 mb-6 md:mb-0">
                 <h1 className="text-4xl font-bold mb-4">Aquecimento Solar Térmico</h1>
-                <p className="text-xl text-blue-100">
+                <p className="text-xl text-orange-100">
                   Conforto sustentável com a energia do sol
                 </p>
               </div>
@@ -33,7 +33,7 @@ const AquecimentoSolar: React.FC = () => {
           <div className="p-8 md:p-12">
             <div className="prose prose-lg text-gray-700 max-w-none">
               <div className="flex items-start mb-8">
-                <Droplet className="text-blue-500 mr-4 mt-1 flex-shrink-0" />
+                <Droplet className="text-orange-500 mr-4 mt-1 flex-shrink-0" />
                 <p className="text-xl text-gray-700 leading-relaxed">
                   O sistema de aquecimento solar térmico capta a energia solar para aquecer água, 
                   proporcionando conforto térmico e economia de até 80% no consumo de energia elétrica ou gás.
@@ -42,9 +42,9 @@ const AquecimentoSolar: React.FC = () => {
 
               {/* Cards de benefícios */}
               <div className="grid md:grid-cols-2 gap-6 my-10">
-                <div className="bg-blue-50 rounded-lg p-6 border-l-4 border-blue-500">
+                <div className="bg-orange-50 rounded-lg p-6 border-l-4 border-orange-500">
                   <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                    <Zap className="text-blue-600 mr-3" size={20} />
+                    <Zap className="text-orange-600 mr-3" size={20} />
                     Nossos Serviços
                   </h3>
                   <ul className="space-y-3">
@@ -103,7 +103,7 @@ const AquecimentoSolar: React.FC = () => {
 
               {/* CTA */}
               <div className="mt-12 text-center">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors shadow-lg">
+                <button className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors shadow-lg">
                   Solicitar Orçamento
                 </button>
                 <p className="mt-4 text-gray-600">

@@ -29,7 +29,7 @@ const FaqSection: React.FC = () => {
     },
     {
       question: "Qual o valor médio de economia na conta de luz?",
-      answer: "A economia média é de 80% a 95% na conta de energia, podendo chegar a 100% em alguns casos."
+      answer: "A economia média é de 20% a 40% na conta de energia, podendo chegar a 100% em alguns casos."
     }
   ];
 

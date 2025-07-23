@@ -8,13 +8,7 @@ const EnergiaSolar: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <button 
-          onClick={() => navigate(-1)}
-          className="flex items-center text-orange-600 hover:text-orange-800 mb-6 transition-colors"
-        >
-          <ArrowLeft className="mr-2" size={20} />
-          Voltar
-        </button>
+        
 
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Header com imagem e título */}
@@ -78,7 +72,7 @@ const EnergiaSolar: React.FC = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   {[
                     { 
-                      title: "Até 95% de economia", 
+                      title: "Até 40% de economia", 
                       desc: "Redução drástica na conta de energia",
                       icon: <Zap className="text-yellow-500" />
                     },
@@ -111,7 +105,7 @@ const EnergiaSolar: React.FC = () => {
                 </div>
               </div>
 
-              {/* Destaque Financiamento */}
+              {/* Destaque Financiamento 
               <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-xl p-8 my-10 text-white">
                 <div className="flex flex-col md:flex-row items-center">
                   <div className="md:w-2/3 mb-6 md:mb-0">
@@ -128,7 +122,8 @@ const EnergiaSolar: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div>*/}
+              
 
               {/* Comparativo */}
               <div className="my-10">

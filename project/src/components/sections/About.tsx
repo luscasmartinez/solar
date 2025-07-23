@@ -21,7 +21,7 @@ const About: React.FC = () => {
     {
       icon: <Battery size={28} />,
       title: "Missão",
-      description: "Reduza sua conta de energia em até 95% e tenha retorno do investimento em aproximadamente 4 anos.",
+      description: "Reduza sua conta de energia e tenha retorno do investimento em aproximadamente 4 anos.",
       bgImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       day: "01",
       month: "Jan",

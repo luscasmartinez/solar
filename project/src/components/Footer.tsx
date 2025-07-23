@@ -48,11 +48,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center">
                 <Phone size={16} className="text-primary-300 mr-2" />
-                <span className="text-gray-300">(XX) XXXX-XXXX</span>
+                <span className="text-gray-300">(55) 99931-4171</span>
               </div>
               <div className="flex items-center">
                 <MapPin size={16} className="text-primary-300 mr-2" />
-                <span className="text-gray-300">São Paulo, SP</span>
+                <span className="text-gray-300">Rua Gen. Vitorino, 382 - Centro, Alegrete </span>
               </div>
             </div>
           </div>
