@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
           <Link to="/" className="flex items-center">
             {/* Substituição do texto Brand pela imagem */}
             <img 
-              src="https://i.postimg.cc/hhfP09M8/eee5fceb.png" 
+              src="https://i.imgur.com/Nd4zBTN.png" 
               alt="Logo Solar Energy" 
               className={`h-10 transition-all duration-300 ${isScrolled ? 'h-8' : 'h-10'}`}
             />
