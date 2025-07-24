@@ -55,7 +55,7 @@ const Login: React.FC = () => {
           {/* Logo */}
           <div className="text-center mb-8">
             <img 
-              src="https://i.postimg.cc/hhfP09M8/eee5fceb.png" 
+              src="https://i.imgur.com/Nd4zBTN.png" 
               alt="Logo" 
               className="h-12 mx-auto mb-4"
             />
