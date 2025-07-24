@@ -63,7 +63,7 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
           {/* Logo */}
           <div className="flex items-center justify-center h-16 px-4 bg-primary-500">
             <img 
-              src="https://i.postimg.cc/hhfP09M8/eee5fceb.png" 
+              src="https://i.imgur.com/Nd4zBTN.png" 
               alt="Logo" 
               className="h-8"
             />
