@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
 
   return (
     <section
-      id="hero"
+      id="home"
       ref={sectionRef}
       className="relative min-h-screen pt-24 pb-16 flex items-center"
     >

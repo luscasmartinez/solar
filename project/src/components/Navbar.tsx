@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
           <nav className="hidden md:flex items-center space-x-8">
             {isHomePage ? (
               <>
-                <a href="#hero" className="font-medium text-primary-700 hover:text-primary-500 transition-colors">
+                <a href="#home" className="font-medium text-primary-700 hover:text-primary-500 transition-colors">
                   Início
                 </a>
                 <a href="#about" className="font-medium text-primary-700 hover:text-primary-500 transition-colors">

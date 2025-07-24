@@ -7,6 +7,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import Processo from '../components/sections/Processo';
 import FaqSection from '../components/FaqSection';
 import ServicesSection from '../components/ServicesSection';
+import GoogleReviews from '../components/sections/GoogleReviews';
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <ServicesSection />
       <Processo />
       <Contact />
+      <GoogleReviews />
       <FaqSection />
       <WhatsAppButton 
         phoneNumber="5511999999999" 
