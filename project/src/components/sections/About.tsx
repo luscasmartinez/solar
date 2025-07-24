@@ -8,20 +8,25 @@ const About: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { threshold: 0.1 });
   const clientLogos = [
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png"
+    "https://i.imgur.com/IMe5Z7D.jpeg",
+    "https://i.imgur.com/Veu1Tn2.jpeg",
+    "https://i.imgur.com/w6LRmxD.jpeg",
+    "https://i.imgur.com/BbqlV5H.jpeg",
+    "https://i.imgur.com/ybUH6rq.jpeg",
+    "https://i.imgur.com/pLn9Dhb.jpeg",
+    "https://i.imgur.com/lJClLl8.jpeg",
+    "https://i.imgur.com/wGhuAxV.jpeg",
+    "https://i.imgur.com/eM58T9c.jpeg",
+    "https://i.imgur.com/iwka3rh.jpeg",
+    "https://i.imgur.com/BGDZ9Yc.jpeg",
+    "https://i.imgur.com/Nohqk01.jpeg"
   ];
 
   const cards = [
     {
       icon: <Battery size={28} />,
       title: "Missão",
-      description: "Reduza sua conta de energia e tenha retorno do investimento em aproximadamente 4 anos.",
+      description: "Entregar soluções em engenharia elétrica e energia solar com excelência técnica, segurança e comprometimento, promovendo o uso inteligente da energia e contribuindo para a sustentabilidade e o desenvolvimento dos nossos clientes e da sociedade.",
       bgImage: "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       day: "01",
       month: "Jan",
@@ -31,7 +36,7 @@ const About: React.FC = () => {
     {
       icon: <Leaf size={28} />,
       title: "Visão",
-      description: "Energia limpa e renovável que contribui para a redução da emissão de gases do efeito estufa.",
+      description: "Valorizamos a segurança, a excelência técnica, a sustentabilidade, a transparência com o cliente e a inovação com propósito em tudo o que fazemos.",
       bgImage: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       day: "15",
       month: "Mar",
