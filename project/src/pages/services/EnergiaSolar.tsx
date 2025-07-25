@@ -8,7 +8,7 @@ const EnergiaSolar: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        
+
 
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Header com imagem e título */}
@@ -35,7 +35,7 @@ const EnergiaSolar: React.FC = () => {
               <div className="flex items-start mb-8">
                 <Zap className="text-orange-500 mr-4 mt-1 flex-shrink-0" />
                 <p className="text-xl text-gray-700 leading-relaxed">
-                  Nossos sistemas fotovoltaicos oferecem geração de energia limpa e renovável, 
+                  Nossos sistemas fotovoltaicos oferecem geração de energia limpa e renovável,
                   com economia imediata na conta de luz e retorno garantido do investimento.
                 </p>
               </div>
@@ -71,23 +71,23 @@ const EnergiaSolar: React.FC = () => {
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   {[
-                    { 
-                      title: "Até 40% de economia", 
+                    {
+                      title: "Até 40% de economia",
                       desc: "Redução drástica na conta de energia",
                       icon: <Zap className="text-yellow-500" />
                     },
-                    { 
-                      title: "+6% no valor do imóvel", 
+                    {
+                      title: "+6% no valor do imóvel",
                       desc: "Valorização imediata da propriedade",
                       icon: <Home className="text-orange-500" />
                     },
-                    { 
-                      title: "Retorno em 4-6 anos", 
+                    {
+                      title: "Retorno em 4-6 anos",
                       desc: "Payback rápido e garantido",
                       icon: <Monitor className="text-green-500" />
                     },
-                    { 
-                      title: "Energia 100% limpa", 
+                    {
+                      title: "Energia 100% limpa",
                       desc: "Sustentabilidade ambiental",
                       icon: <Leaf className="text-emerald-500" />
                     }
@@ -123,7 +123,7 @@ const EnergiaSolar: React.FC = () => {
                   </div>
                 </div>
               </div>*/}
-              
+
 
               {/* Comparativo */}
               <div className="my-10">
@@ -133,18 +133,18 @@ const EnergiaSolar: React.FC = () => {
                 </h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {[
-                    { 
-                      title: "25 anos", 
+                    {
+                      title: "25 anos",
                       desc: "Garantia de performance dos módulos",
                       color: "bg-orange-100 text-orange-800"
                     },
-                    { 
-                      title: "10 anos", 
+                    {
+                      title: "10 anos",
                       desc: "Garantia nos inversores",
                       color: "bg-orange-100 text-orange-800"
                     },
-                    { 
-                      title: "5 anos", 
+                    {
+                      title: "5 anos",
                       desc: "Garantia na instalação",
                       color: "bg-orange-100 text-orange-800"
                     }
@@ -159,9 +159,11 @@ const EnergiaSolar: React.FC = () => {
 
               {/* CTA */}
               <div className="mt-12 text-center">
-                <button className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-sky-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all shadow-lg transform hover:scale-105">
-                  Simular Economia
-                </button>
+                <a href="https://wa.me/5555999314171?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Energia%20Solar%20Fotovoltaica" target="_blank" rel="noopener noreferrer">
+                  <button className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-sky-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all shadow-lg transform hover:scale-105">
+                    Entre em contato
+                  </button>
+                </a>
                 <p className="mt-4 text-gray-600">
                   O sol brilha para todos - aproveite essa energia gratuita!
                 </p>

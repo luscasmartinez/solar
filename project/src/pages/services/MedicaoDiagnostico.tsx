@@ -155,9 +155,11 @@ const MedicaoDiagnostico: React.FC = () => {
 
               {/* CTA */}
               <div className="mt-12 text-center">
+                <a href="https://wa.me/5555999314171?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20para%20Diagnóstico%20Energético" target="_blank" rel="noopener noreferrer">
                 <button className="bg-gradient-to-r from-orange-600 to-orange-600 hover:from-orange-700 hover:to-orange-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-all shadow-lg transform hover:scale-105">
                   Agendar Diagnóstico
                 </button>
+                </a>
                 <p className="mt-4 text-gray-600">
                   Conheça a saúde do seu sistema elétrico e evite gastos desnecessários
                 </p>
