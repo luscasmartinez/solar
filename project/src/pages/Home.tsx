@@ -20,7 +20,7 @@ function Home() {
       <GoogleReviews />
       <FaqSection />
       <WhatsAppButton 
-        phoneNumber="5511999999999" 
+        phoneNumber="55999314171" 
         message="Olá! Vim pelo seu site e gostaria de mais informações."
       />
     </>

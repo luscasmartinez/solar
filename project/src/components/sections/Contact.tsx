@@ -64,10 +64,10 @@ const Contact: React.FC = () => {
                   <div>
                     <h4 className="text-lg font-medium mb-1">Email</h4>
                     <a 
-                      href="mailto:contato@groundenergia.com" 
+                      href="mailto: groundenergiasolar@gmail.com" 
                       className="text-white hover:text-yellow-300 transition-colors"
                     >
-                      contato@groundenergia.com
+                       groundenergiasolar@gmail.com
                     </a>
                   </div>
                 </div>
@@ -77,10 +77,10 @@ const Contact: React.FC = () => {
                   <div>
                     <h4 className="text-lg font-medium mb-1">Telefone</h4>
                     <a 
-                      href="tel:+555532323232" 
+                      href="tel:5555999314171" 
                       className="text-white hover:text-yellow-300 transition-colors"
                     >
-                      (55) 3232-3232
+                      (55) 99931-4171
                     </a>
                     <p className="text-sm text-white/80 mt-1">WhatsApp disponível</p>
                   </div>

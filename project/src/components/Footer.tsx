@@ -43,7 +43,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Mail size={16} className="text-primary-300 mr-2" />
-                <span className="text-gray-300">contato@ground.com</span>
+                <span className="text-gray-300"> groundenergiasolar@gmail.com</span>
               </div>
               <div className="flex items-center">
                 <Phone size={16} className="text-primary-300 mr-2" />
