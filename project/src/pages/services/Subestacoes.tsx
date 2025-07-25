@@ -8,13 +8,7 @@ const Subestacoes: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <button 
-          onClick={() => navigate(-1)}
-          className="flex items-center text-orange-600 hover:text-orange-800 mb-6 transition-colors"
-        >
-          <ArrowLeft className="mr-2" size={20} />
-          Voltar
-        </button>
+        
 
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Header com imagem e título */}

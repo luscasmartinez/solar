@@ -36,7 +36,7 @@ const About: React.FC = () => {
     {
       icon: <Leaf size={28} />,
       title: "Visão",
-      description: "Valorizamos a segurança, a excelência técnica, a sustentabilidade, a transparência com o cliente e a inovação com propósito em tudo o que fazemos.",
+      description: "Ser referência em engenharia elétrica e sistemas fotovoltaicos no Sul do Brasil, reconhecida pela qualidade dos serviços, inovação nos projetos e confiança construída com clientes, parceiros e comunidade.",
       bgImage: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       day: "15",
       month: "Mar",
@@ -46,7 +46,7 @@ const About: React.FC = () => {
     {
       icon: <Award size={28} />,
       title: "Valores",
-      description: "Utilizamos equipamentos de primeira linha com garantia estendida e suporte técnico especializado.",
+      description: "Valorizamos a segurança, a excelência técnica, a sustentabilidade, a transparência com o cliente e a inovação com propósito em tudo o que fazemos.",
       bgImage: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
       day: "30",
       month: "Jun",
