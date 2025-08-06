@@ -137,8 +137,10 @@ const About: React.FC = () => {
   <h3 className="text-2xl md:text-3xl font-bold text-white">
     Nossa Experiência
   </h3>
-  <p className="text-blue-200">
-    Com mais de 10 anos no mercado de energia solar, já realizamos mais de 500 instalações em residências e empresas. Nossa equipe altamente qualificada está pronta para desenvolver o projeto ideal para suas necessidades.
+  <p className="text-blue-200 text-justify">
+    Com 4 anos de experiência e mais de 200 projetos entregues, transformamos energia solar em economia real para residências e propriedades rurais. Já instalamos mais de 4.230 módulos, totalizando 2.326 kWp em potência — o que representa mais de R$ 566 mil economizados por nossos clientes.
+
+Oferecemos soluções completas e personalizadas, com engenharia de qualidade, instalação técnica e suporte pós-venda. Do projeto ao monitoramento, entregamos desempenho, eficiência e compromisso em cada etapa.
   </p>
   <p className="text-blue-200">
     Oferecemos soluções completas, desde o dimensionamento do sistema até a instalação e manutenção, sempre com foco na máxima eficiência e satisfação do cliente.
@@ -149,7 +151,7 @@ const About: React.FC = () => {
     {/* Projetos Entregues */}
     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
       <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
-        <Counter value={300} duration={2000} />
+        <Counter value={200} duration={2000} prefix='+'/>
       </div>
       <p className="text-sm text-blue-200">Projetos Entregues</p>
     </div>
@@ -157,7 +159,7 @@ const About: React.FC = () => {
     {/* Módulos Instalados */}
     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
       <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
-        <Counter value={6350} duration={2000} />
+        <Counter value={4230} duration={2000} prefix='+' />
       </div>
       <p className="text-sm text-blue-200">Módulos Instalados</p>
     </div>
@@ -165,7 +167,7 @@ const About: React.FC = () => {
     {/* KWp de Potência */}
     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
       <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
-        <Counter value={3490} duration={2000} suffix=" " />
+        <Counter value={2326} duration={2000} prefix='+' suffix=" " />
       </div>
       <p className="text-sm text-blue-200">KWp de Potência Total</p>
     </div>
@@ -173,7 +175,7 @@ const About: React.FC = () => {
     {/* Economia Gerada */}
     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
       <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
-        <Counter value={849} duration={2000} prefix="R$ " />
+        <Counter value={566} duration={2000} prefix="+R$ de " suffix='MIL'/>
       </div>
       <p className="text-sm text-blue-200">Mil em Economia Gerada</p>
     </div>

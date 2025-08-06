@@ -53,8 +53,8 @@ const Contact: React.FC = () => {
                   <div>
                     <h4 className="text-lg font-medium mb-1">Endereço</h4>
                     <p className="text-white">
-                      R. Dom Pedro II, 1255 - Centro,<br />
-                      São Gabriel - RS, 97300-000
+                      Rua Gen. Vitorino, 382 - Centro, Alegrete,<br />
+                      Alegrete - RS, 97542-320
                     </p>
                   </div>
                 </div>
