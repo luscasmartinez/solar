@@ -169,7 +169,7 @@ Oferecemos soluções completas e personalizadas, com engenharia de qualidade, i
       <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
         <Counter value={2326} duration={2000} prefix='+' suffix=" " />
       </div>
-      <p className="text-sm text-blue-200">KWp de Potência Total</p>
+      <p className="text-sm text-blue-200">kWp de Potência Total</p>
     </div>
 
     {/* Economia Gerada */}
