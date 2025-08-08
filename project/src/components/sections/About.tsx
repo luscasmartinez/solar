@@ -151,7 +151,7 @@ Oferecemos soluções completas e personalizadas, com engenharia de qualidade, i
     {/* Projetos Entregues */}
     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
       <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
-        <Counter value={200} duration={2000} prefix='+'/>
+        <Counter value={200} duration={2000} prefix='+ de '/>
       </div>
       <p className="text-sm text-blue-200">Projetos Entregues</p>
     </div>
@@ -159,7 +159,7 @@ Oferecemos soluções completas e personalizadas, com engenharia de qualidade, i
     {/* Módulos Instalados */}
     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
       <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
-        <Counter value={4230} duration={2000} prefix='+' />
+        <Counter value={4230} duration={2000} prefix='+ de ' />
       </div>
       <p className="text-sm text-blue-200">Módulos Instalados</p>
     </div>
@@ -167,7 +167,7 @@ Oferecemos soluções completas e personalizadas, com engenharia de qualidade, i
     {/* KWp de Potência */}
     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
       <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
-        <Counter value={2326} duration={2000} prefix='+' suffix=" " />
+        <Counter value={2326} duration={2000} prefix='+ de ' suffix=" " />
       </div>
       <p className="text-sm text-blue-200">kWp de Potência Total</p>
     </div>
@@ -175,9 +175,9 @@ Oferecemos soluções completas e personalizadas, com engenharia de qualidade, i
     {/* Economia Gerada */}
     <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20">
       <div className="text-2xl md:text-3xl font-bold text-yellow-400 mb-1">
-        <Counter value={566} duration={2000} prefix="+R$ de " suffix='MIL'/>
+        <Counter value={566} duration={2000} prefix="+ de R$  " suffix='MIL'/>
       </div>
-      <p className="text-sm text-blue-200">Mil em Economia Gerada</p>
+      <p className="text-sm text-blue-200">Em Economia Gerada</p>
     </div>
   </div>
 </div>

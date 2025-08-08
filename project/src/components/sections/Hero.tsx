@@ -82,15 +82,15 @@ const Hero: React.FC = () => {
 
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center  font-bold text-2xl text-yellow-400">
-                <Counter value={200} prefix='+ De '/>
+                <Counter value={200} prefix='+ de '/>
                 <p className="text-sm text-gray-300">Projetos Entregues</p>
               </div>
               <div className="text-center font-bold text-2xl text-yellow-400">
-                <Counter value={+4230} prefix='+ De '/>
+                <Counter value={+4230} prefix='+ de '/>
                 <p className="text-sm text-gray-300">Módulos Instalados</p>
               </div>
               <div className="text-center font-bold text-2xl text-yellow-400">
-                <Counter value={+2326} suffix="" prefix='+ De '/>
+                <Counter value={+2326} suffix="" prefix='+ de '/>
                 <p className="text-sm text-gray-300">kWp de Potencia Total</p>
               </div>
             </div>
