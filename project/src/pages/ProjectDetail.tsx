@@ -77,7 +77,7 @@ function ProjectDetail() {
   }
 
   return (
-    <div className="py-20 bg-secondary-50">
+    <div className="py-20 bg-primary-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
           <Link
