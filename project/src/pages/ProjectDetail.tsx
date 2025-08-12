@@ -63,7 +63,7 @@ function ProjectDetail() {
             <h2 className="text-2xl font-semibold text-primary-800 mb-4">
               Projeto não encontrado
             </h2>
-            <Link 
+            <Link
               to="/projects"
               className="inline-flex items-center text-primary-500 hover:text-primary-600"
             >
@@ -80,7 +80,7 @@ function ProjectDetail() {
     <div className="py-20 bg-secondary-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto">
-          <Link 
+          <Link
             to="/projects"
             className="inline-flex items-center text-primary-500 hover:text-primary-600 mb-8"
           >
@@ -90,8 +90,8 @@ function ProjectDetail() {
 
           <div>
             <div className="aspect-video rounded-xl overflow-hidden mb-8">
-              <img 
-                src={project.image} 
+              <img
+                src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover"
               />
@@ -155,7 +155,7 @@ function ProjectDetail() {
               </h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {project.features.map((feature, index) => (
-                  <li 
+                  <li
                     key={index}
                     className="flex items-center space-x-2 text-primary-600"
                   >
@@ -173,12 +173,12 @@ function ProjectDetail() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {project.gallery.map((image, index) => (
-                    <div 
+                    <div
                       key={index}
                       className="aspect-video rounded-xl overflow-hidden"
                     >
-                      <img 
-                        src={image} 
+                      <img
+                        src={image}
                         alt={`${project.title} - Imagem ${index + 1}`}
                         className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                       />
@@ -189,9 +189,11 @@ function ProjectDetail() {
             )}
 
             <div className="flex flex-wrap gap-4">
-              <a 
-                href="#contact"
+              <a
+                href="https://wa.me/5555999314171?text=Ol%C3%A1%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento"
                 className="inline-flex items-center px-6 py-3 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Sun size={20} className="mr-2" />
                 Solicitar Orçamento
