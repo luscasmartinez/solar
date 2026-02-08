@@ -39,9 +39,10 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
             {/* Substituição do texto Brand pela imagem */}
-            <img 
-              src="https://i.imgur.com/Nd4zBTN.png" 
-              alt="Logo Solar Energy" 
+            <img
+              id="navbar-logo"
+              src="https://i.imgur.com/Nd4zBTN.png"
+              alt="Logo Ground Energia Solar"
               className={`h-10 transition-all duration-300 ${isScrolled ? 'h-8' : 'h-10'}`}
             />
           </Link>
