@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import WhatsAppCTA from './WhatsAppCTA';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -67,6 +68,7 @@ const Navbar: React.FC = () => {
                 Voltar para Home
               </Link>
             )}
+            <WhatsAppCTA section="navbar" variant="navbar" />
             <Link 
               to="/projects" 
               className="font-medium px-4 py-2 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition-colors"
@@ -121,6 +123,7 @@ const Navbar: React.FC = () => {
                   </a>
                 </>
               )}
+              <WhatsAppCTA section="navbar_mobile" variant="navbar" className="justify-center" />
               <Link 
                 to="/projects"
                 className="font-medium text-white bg-primary-500 hover:bg-primary-600 transition-colors py-2 px-4 rounded-xl text-center"

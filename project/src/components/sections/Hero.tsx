@@ -1,43 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useInView } from '../../hooks/useInView';
-import { Sun, Battery, Leaf, Send } from 'lucide-react';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../../config/firebase';
-import toast from 'react-hot-toast';
+import { Sun, Leaf } from 'lucide-react';
 import Counter from '../Counter';
+import WhatsAppCTA from '../WhatsAppCTA';
 
 const Hero: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { threshold: 0.1 });
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    const form = e.currentTarget as HTMLFormElement;
-    const formData = new FormData(form);
-
-    try {
-      await addDoc(collection(db, 'budgets'), {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        phone: formData.get('phone'),
-        type: formData.get('type'),
-        source: 'hero_section',
-        createdAt: new Date(),
-        status: 'pending'
-      });
-
-      toast.success('Orçamento solicitado com sucesso!');
-      form.reset();
-    } catch (error) {
-      toast.error('Erro ao enviar solicitação');
-      console.error(error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <section
@@ -96,7 +65,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Seção Direita (Formulário Ajustado) */}
+          {/* Seção Direita - Botão WhatsApp */}
           <div className={`${isInView ? 'animate-slide-up delay-300' : 'opacity-0 translate-y-10'}`}>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/20 to-green-500/20 rounded-2xl blur-xl"></div>
@@ -106,92 +75,14 @@ const Hero: React.FC = () => {
                     <Sun className="text-yellow-500" size={24} />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800">
-                    Solicite um Orçamento
+                    Fale conosco pelo WhatsApp
                   </h3>
                 </div>
-
-                {/* Formulário com envio para Firebase */}
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Nome completo
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-yellow-500 focus:ring focus:ring-yellow-200 focus:ring-opacity-50 transition-colors"
-                      placeholder="Digite seu nome"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      E-mail
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-yellow-500 focus:ring focus:ring-yellow-200 focus:ring-opacity-50 transition-colors"
-                      placeholder="seu@email.com"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Telefone
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-yellow-500 focus:ring focus:ring-yellow-200 focus:ring-opacity-50 transition-colors"
-                      placeholder="(00) 00000-0000"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="type" className="block text-sm font-medium text-gray-700 mb-2">
-                      Tipo de instalação
-                    </label>
-                    <select
-                      id="type"
-                      name="type"
-                      required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-yellow-500 focus:ring focus:ring-yellow-200 focus:ring-opacity-50 transition-colors"
-                    >
-                      <option value="">Selecione uma opção</option>
-                      <option value="residential">Residencial</option>
-                      <option value="commercial">Comercial</option>
-                      <option value="industrial">Industrial</option>
-                      <option value="rural">Rural</option>
-                    </select>
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className={`w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-6 py-3 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center ${isLoading ? 'opacity-70 cursor-not-allowed' : ''
-                      }`}
-                  >
-                    {isLoading ? (
-                      <span className="inline-block h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                    ) : (
-                      <>
-                        <Send size={20} className="mr-2" />
-                        Solicitar Orçamento
-                      </>
-                    )}
-                  </button>
-                </form>
-
-                {/* Rodapé do Formulário (Mantido Igual) */}
+                <p className="text-gray-600 mb-6">
+                  Tire suas dúvidas ou solicite um orçamento. Estamos prontos para atender você.
+                </p>
+                <WhatsAppCTA section="hero" variant="primary" className="w-full" />
                 <div className="mt-6 pt-6 border-t border-gray-200">
-                  
                   <div className="flex items-center gap-2 text-gray-600 text-sm mt-2">
                     <Leaf size={16} />
                     <span>Energia 100% limpa e renovável</span>

@@ -1,10 +1,11 @@
 import React from 'react';
 import { services } from '../types/services';
 import ServiceCard from './ServiceCard';
+import WhatsAppCTA from './WhatsAppCTA';
 
 const ServicesSection: React.FC = () => {
   return (
-    <div id="services"  className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div id="services" className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -18,10 +19,16 @@ const ServicesSection: React.FC = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
+        </div>
+
+        {/* CTA WhatsApp no meio dos serviços */}
+        <div className="text-center mt-16">
+          <p className="text-gray-600 mb-4">Quer saber mais ou solicitar um orçamento?</p>
+          <WhatsAppCTA section="services" variant="section" />
         </div>
       </div>
     </div>

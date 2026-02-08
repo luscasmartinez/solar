@@ -51,6 +51,7 @@ export default {
         'fade-in': 'fadeIn 0.8s ease-in-out forwards',
         'slide-up': 'slideUp 0.8s ease-in-out forwards',
         'zoom-in': 'zoomIn 0.8s ease-in-out forwards',
+        'button-pulse': 'buttonPulse 2s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -64,6 +65,10 @@ export default {
         zoomIn: {
           '0%': { transform: 'scale(0.95)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' },
+        },
+        buttonPulse: {
+          '0%, 100%': { boxShadow: '0 4px 14px 0 rgba(34, 197, 94, 0.35)' },
+          '50%': { boxShadow: '0 4px 24px 4px rgba(34, 197, 94, 0.45)' },
         },
       },
     },
